@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from '../common/request';
 
 class RegisterForm extends Component {
     constructor(props) {
@@ -22,10 +23,25 @@ class RegisterForm extends Component {
         });
     }
 
-    signUp(e) {
+    async signUp(e) {
         e.preventDefault();
         console.log(this.state);
 
+        try {
+            const res = await axios.post('/user', this.state);
+
+            console.log(res);
+
+            if (res.status === 200) {
+                alert('회원가입 성공');
+                // history.push('/');
+                window.location.replace("/")
+            } else {
+                alert('에러');
+            }
+        } catch (e) {
+            console.log(e);
+        }
 
     }
 
