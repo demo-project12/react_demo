@@ -39,7 +39,10 @@ class Home extends Component {
                     </div>
                     <div className="social-icons">
                         <img src={fb} alt="facebook"/>
-                        <a href={process.env.REACT_APP_OAUTH2_URI + '/google'}><img src={gl} alt="google"/></a>
+                        <a href={process.env.REACT_APP_OAUTH2_URI + '/google'}>
+                        {/*<a href={process.env.REACT_APP_OAUTH2_URI + '/google?redirect_uri=' + process.env.REACT_APP_OAUTH2_REDIRECT_URI}>*/}
+                            <img src={gl} alt="google"/>
+                        </a>
                         <img src={nv} alt="naver"/>
                         <img src={ko} alt="kakao"/>
                     </div>
